@@ -27,6 +27,11 @@
 
 Experience the deployed version of QuickGPT:
 
+<img width="1917" height="897" alt="image" src="https://github.com/user-attachments/assets/6babec1d-6898-44b7-b66d-40296325aa16" />
+<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/2a1ce6e5-ee9d-44bb-9486-77029d7ad658" />
+
+
+
 ### 🚀 [Open QuickGPT](https://quick-gpt-client-black.vercel.app/)
 
 > **Note:** Some AI features depend on the availability and usage limits of third-party services such as Gemini and ImageKit.
