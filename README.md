@@ -185,7 +185,8 @@ The application is designed with a clean and modern interface.
 The main QuickGPT interface provides access to conversations, community images, credits, dark mode, and AI generation.
 
 <p align="center">
-  <img src="screenshots/home.png" alt="QuickGPT Home Page" width="100%" />
+  <img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/c79b9c50-a4e7-4e55-b8e6-45372d0dc58f" />
+
 </p>
 
 ---
@@ -195,7 +196,8 @@ The main QuickGPT interface provides access to conversations, community images, 
 QuickGPT provides a simple and clean authentication interface for users.
 
 <p align="center">
-  <img src="screenshots/login.png" alt="QuickGPT Login Page" width="100%" />
+  <img width="1697" height="792" alt="image" src="https://github.com/user-attachments/assets/f8faab5f-4eff-4157-9c02-b8dc5f941bd0" />
+
 </p>
 
 ---
