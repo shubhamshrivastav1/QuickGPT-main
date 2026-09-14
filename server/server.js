@@ -1,3 +1,5 @@
+// 
+
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
@@ -7,6 +9,7 @@ import chatRouter from "./routes/chatRoutes.js";
 import messageRouter from "./routes/messageRoutes.js";
 import creditRouter from "./routes/creditRoutes.js";
 import { stripeWebhooks } from "./controllers/webhooks.js";
+
 import dns from "dns";
 
 dns.setServers([
@@ -40,9 +43,6 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(
-    `Server is running on port ${PORT} ... http://localhost:${PORT} 🍽️`
+    `Server is running on port ${PORT} ... http://localhost:${PORT}`
   );
 });
-
-
-// 

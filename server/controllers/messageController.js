@@ -2,14 +2,15 @@ import axios from "axios";
 import Chat from "../models/Chat.js";
 import User from "../models/User.js";
 import openai from "../configs/openai.js";
-import imagekit from "../configs/imageKit.js";
 
-// Text-based AI Chat Message Controller
+// =====================================================
+// TEXT-BASED AI CHAT MESSAGE CONTROLLER
+// =====================================================
+
 export const textMessageController = async (req, res) => {
   try {
     const userId = req.user._id;
 
-    // Check credits
     if (req.user.credits < 1) {
       return res.json({
         success: false,
@@ -19,7 +20,19 @@ export const textMessageController = async (req, res) => {
 
     const { chatId, prompt } = req.body;
 
-    const chat = await Chat.findOne({ userId, _id: chatId });
+    const chat = await Chat.findOne({
+      userId,
+      _id: chatId,
+    });
+
+    if (!chat) {
+      return res.json({
+        success: false,
+        message: "Chat not found",
+      });
+    }
+
+    // Save user message
     chat.messages.push({
       role: "user",
       content: prompt,
@@ -27,8 +40,9 @@ export const textMessageController = async (req, res) => {
       isImage: false,
     });
 
+    // Gemini response
     const { choices } = await openai.chat.completions.create({
-      model: "gemini-2.0-flash",
+      model: "gemini-3.6-flash",
       messages: [
         {
           role: "user",
@@ -42,17 +56,35 @@ export const textMessageController = async (req, res) => {
       timestamp: Date.now(),
       isImage: false,
     };
-    res.json({ success: true, reply });
 
     chat.messages.push(reply);
+
     await chat.save();
-    await User.updateOne({ _id: userId }, { $inc: { credits: -1 } });
+
+    await User.updateOne(
+      { _id: userId },
+      { $inc: { credits: -1 } }
+    );
+
+    res.json({
+      success: true,
+      reply,
+    });
   } catch (error) {
-    res.json({ success: false, message: error.message });
+    console.log("TEXT MESSAGE ERROR:", error);
+
+    res.json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
-// Image Generation Message Controller
+
+// =====================================================
+// IMAGE GENERATION MESSAGE CONTROLLER
+// =====================================================
+
 export const imageMessageController = async (req, res) => {
   try {
     const userId = req.user._id;
@@ -68,9 +100,19 @@ export const imageMessageController = async (req, res) => {
     const { prompt, chatId, isPublished } = req.body;
 
     // Find chat
-    const chat = await Chat.findOne({ userId, _id: chatId });
+    const chat = await Chat.findOne({
+      userId,
+      _id: chatId,
+    });
 
-    // Push user message
+    if (!chat) {
+      return res.json({
+        success: false,
+        message: "Chat not found",
+      });
+    }
+
+    // Save user message
     chat.messages.push({
       role: "user",
       content: prompt,
@@ -78,49 +120,136 @@ export const imageMessageController = async (req, res) => {
       isImage: false,
     });
 
-    // Encode the prompt
+    // Encode prompt
     const encodedPrompt = encodeURIComponent(prompt);
 
-    // Construct ImageKit AI generation URL
-    const generatedImageUrl = `${
-      process.env.IMAGEKIT_URL_ENDPOINT
-    }/ik-genimg-prompt-${encodedPrompt}/quickgpt/${Date.now()}.png?tr=w-800,h-800`;
+    // Unique filename
+    const fileName = `quickgpt-${Date.now()}.png`;
 
-    // Trigger generation by fetching from ImageKit
-    const aiImageResponse = await axios.get(generatedImageUrl, {
-      responseType: "arraybuffer",
-    });
+    // ImageKit AI image URL
+    const generatedImageUrl =
+      `${process.env.IMAGEKIT_URL_ENDPOINT}` +
+      `/ik-genimg-prompt-${encodedPrompt}` +
+      `/quickgpt/${fileName}`;
 
-    // Convert to Base64
-    const base64Image = `data:image/png;base64,${Buffer.from(
-      aiImageResponse.data,
-      "binary"
-    ).toString("base64")}`;
+    console.log("Generating image...");
+    console.log("Image URL:", generatedImageUrl);
 
-    // Upload to ImageKit Media Library
-    const uploadResponse = await imagekit.upload({
-      file: base64Image,
-      fileName: `quickgpt/${Date.now()}.png`,
-      folder: "quickgpt",
-    });
+    // =====================================================
+    // WAIT UNTIL IMAGEKIT FINISHES GENERATING THE IMAGE
+    // =====================================================
+
+    let imageReady = false;
+    let attempts = 0;
+    const maxAttempts = 30;
+
+    while (!imageReady && attempts < maxAttempts) {
+      attempts++;
+
+      try {
+        const response = await axios.get(
+          `${generatedImageUrl}?v=${Date.now()}`,
+          {
+            responseType: "arraybuffer",
+            validateStatus: () => true,
+          }
+        );
+
+        const isIntermediate =
+          response.headers["is-intermediate-response"] === "true";
+
+        const contentType =
+          response.headers["content-type"] || "";
+
+        console.log(
+          `Image check ${attempts}:`,
+          contentType,
+          isIntermediate
+        );
+
+        // Image is ready
+        if (
+          response.status >= 200 &&
+          response.status < 300 &&
+          !isIntermediate &&
+          contentType.startsWith("image/")
+        ) {
+          imageReady = true;
+          break;
+        }
+
+        // Image still generating
+        if (isIntermediate) {
+          await new Promise((resolve) =>
+            setTimeout(resolve, 2000)
+          );
+          continue;
+        }
+
+        // ImageKit returned an actual error
+        const errorMessage =
+          response.headers["ik-error"] ||
+          `ImageKit returned status ${response.status}`;
+
+        throw new Error(errorMessage);
+      } catch (error) {
+        if (attempts >= maxAttempts) {
+          throw error;
+        }
+
+        await new Promise((resolve) =>
+          setTimeout(resolve, 2000)
+        );
+      }
+    }
+
+    if (!imageReady) {
+      throw new Error(
+        "Image generation timed out. Please try again."
+      );
+    }
+
+    console.log("Image generated successfully!");
+
+    // =====================================================
+    // SAVE IMAGE URL
+    // =====================================================
+
+    const finalImageUrl =
+      `${generatedImageUrl}?v=${Date.now()}`;
 
     const reply = {
       role: "assistant",
-      content: uploadResponse.url,
+      content: finalImageUrl,
       timestamp: Date.now(),
       isImage: true,
-      isPublished,
+      isPublished: isPublished || false,
     };
 
-    res.json({ success: true, reply });
-
-    // Push AI reply
+    // Save AI image reply
     chat.messages.push(reply);
+
     await chat.save();
 
-    // Deduct 2 credits for image generation
-    await User.updateOne({ _id: userId }, { $inc: { credits: -2 } });
+    // Deduct 2 credits
+    await User.updateOne(
+      { _id: userId },
+      { $inc: { credits: -2 } }
+    );
+
+    console.log("Image ready:", finalImageUrl);
+
+    // Send response
+    res.json({
+      success: true,
+      reply,
+    });
   } catch (error) {
-    res.json({ success: false, message: error.message });
+    console.log("IMAGE GENERATION ERROR:", error);
+
+    res.json({
+      success: false,
+      message: error.message,
+    });
   }
 };
