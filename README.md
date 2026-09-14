@@ -9,10 +9,10 @@
 <br />
 
 [![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-QuickGPT-success?style=for-the-badge)](https://quick-gpt-client-black.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge\&logo=github)](https://github.com/shubhamshrivastav1/QuickGPT-main)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)](https://react.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge\&logo=node.js\&logoColor=white)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge\&logo=mongodb\&logoColor=white)](https://www.mongodb.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/shubhamshrivastav1/QuickGPT-main)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/License-ISC-blue?style=for-the-badge)](#-license)
 
 <br />
@@ -33,24 +33,25 @@ Experience the deployed version of QuickGPT:
 
 ---
 
-# 📌 Overview
+# 📖 About QuickGPT
 
-**QuickGPT** is a full-stack AI-powered platform designed to provide users with an intuitive interface for interacting with AI, generating content, creating images, managing credits, and sharing generated content with the community.
+**QuickGPT** is a full-stack AI-powered platform that brings AI chat, content generation, image generation, credit management, payments, authentication, and community sharing together in one modern application.
 
-The application combines a modern React frontend with a Node.js/Express backend and integrates several external services to provide a complete AI SaaS-style experience.
+The platform is designed with a clean, responsive interface and a scalable backend architecture.
 
-### Core capabilities include:
+### What QuickGPT provides
 
-* 🤖 AI-powered text generation
-* 💬 Multi-session chat experience
-* 🎨 AI image generation
-* 👤 User authentication
-* 💳 Credit-based usage system
-* 💰 Stripe-powered credit purchases
-* 🌍 Community content sharing
-* 🗄️ MongoDB-based data persistence
-* 🌓 Responsive dark-themed user interface
-* 🔐 Protected backend APIs
+- 🤖 AI-powered text generation
+- 💬 Multi-session AI conversations
+- 🎨 AI image generation
+- 👤 Secure user authentication
+- 💳 Credit-based AI usage
+- 💰 Stripe-powered credit purchases
+- 🌍 Community image sharing
+- 🗄️ MongoDB data persistence
+- 🌓 Dark mode
+- 📱 Responsive design
+- 🔐 Protected backend APIs
 
 ---
 
@@ -60,14 +61,14 @@ The application combines a modern React frontend with a Node.js/Express backend 
 
 QuickGPT provides an interactive AI chat experience with:
 
-* AI-powered conversations
-* Multiple chat sessions
-* Persistent chat history
-* Markdown response rendering
-* Code syntax highlighting
-* Loading states
-* Responsive chat interface
-* Conversation management
+- AI-powered conversations
+- Multiple chat sessions
+- Persistent chat history
+- Markdown response rendering
+- Code syntax highlighting
+- Loading indicators
+- Responsive chat interface
+- Conversation management
 
 ---
 
@@ -77,31 +78,31 @@ Generate images directly from natural-language prompts.
 
 ### Features
 
-* Text-to-image generation
-* ImageKit integration
-* Credit-based image generation
-* Generated image preview
-* Image URL storage
-* Community publishing support
-* Generation status handling
+- Text-to-image generation
+- ImageKit integration
+- Credit-based image generation
+- Generated image preview
+- Image URL storage
+- Community publishing
+- Image generation status handling
 
-> **Image Generation:** ImageKit AI Extension Units are required for image generation.
+> **Note:** Image generation depends on the available ImageKit AI Extension Units.
 
 ---
 
 ## 👤 Authentication
 
-QuickGPT includes a secure authentication system.
+QuickGPT includes a complete authentication system.
 
 ### Supported functionality
 
-* User registration
-* User login
-* JWT authentication
-* Protected API routes
-* Password hashing with BcryptJS
-* Persistent login state
-* Authenticated user data
+- User registration
+- User login
+- JWT authentication
+- Protected API routes
+- Password hashing using BcryptJS
+- Persistent authentication state
+- Authenticated user information
 
 ---
 
@@ -109,18 +110,19 @@ QuickGPT includes a secure authentication system.
 
 QuickGPT uses a credit-based architecture to manage AI usage.
 
-| Feature             |   Credit Cost |
-| :------------------ | ------------: |
-| 💬 Text Generation  |  **1 Credit** |
+| Feature | Credit Cost |
+|:---|---:|
+| 💬 Text Generation | **1 Credit** |
 | 🎨 Image Generation | **2 Credits** |
 
-The system supports:
+The credit system supports:
 
-* Credit balance tracking
-* Automatic credit deduction
-* Credit purchase
-* Stripe payment integration
-* Server-side credit validation
+- Credit balance tracking
+- Automatic credit deduction
+- Credit validation
+- Credit purchases
+- Stripe integration
+- Server-side usage verification
 
 ---
 
@@ -130,43 +132,66 @@ Users can purchase additional credits through Stripe.
 
 The backend handles:
 
-* Checkout/payment processing
-* Credit purchase requests
-* Payment verification
-* Stripe webhook processing
-* Credit updates
+- Payment processing
+- Credit purchase requests
+- Payment verification
+- Stripe webhook processing
+- Credit balance updates
 
-> Stripe secret credentials are kept exclusively on the backend.
+> 🔐 Stripe secret credentials are stored exclusively on the backend.
 
 ---
 
 ## 🌍 Community
 
-QuickGPT includes a community section where users can discover and share AI-generated content.
+QuickGPT includes a community section for discovering and sharing AI-generated images.
 
 Users can:
 
-* Publish generated images
-* Browse community creations
-* Discover content from other users
-* Share AI-generated artwork
+- Publish generated images
+- Browse community creations
+- Discover content from other users
+- Share AI-generated artwork
 
 ---
 
-## 🌓 User Experience
+## 🌓 Modern User Experience
 
-The application is designed with a clean and modern UI.
+The application is designed with a clean and modern interface.
 
-### UX Features
+### UI Features
 
-* Responsive layout
-* Dark mode
-* Mobile-friendly interface
-* Smooth scrolling
-* Loading indicators
-* Toast notifications
-* Clean navigation
-* Modern AI-chat experience
+- Responsive layout
+- Dark mode
+- Mobile-friendly design
+- Smooth scrolling
+- Loading states
+- Toast notifications
+- Clean navigation
+- Modern AI chat interface
+- User-friendly dashboard
+
+---
+
+# 📸 Screenshots
+
+## 🏠 QuickGPT Home
+
+The main QuickGPT interface provides access to conversations, community images, credits, dark mode, and AI generation.
+
+<p align="center">
+  <img src="screenshots/home.png" alt="QuickGPT Home Page" width="100%" />
+</p>
+
+---
+
+## 🔐 User Login
+
+QuickGPT provides a simple and clean authentication interface for users.
+
+<p align="center">
+  <img src="screenshots/login.png" alt="QuickGPT Login Page" width="100%" />
+</p>
 
 ---
 
@@ -174,47 +199,47 @@ The application is designed with a clean and modern UI.
 
 ## 🎨 Frontend
 
-| Technology           | Purpose                     |
-| :------------------- | :-------------------------- |
-| **React**            | UI development              |
-| **Vite**             | Development & build tooling |
-| **Tailwind CSS**     | Styling                     |
-| **Axios**            | HTTP requests               |
-| **React Router DOM** | Client-side routing         |
-| **React Hot Toast**  | Notifications               |
-| **React Markdown**   | Markdown rendering          |
-| **PrismJS**          | Code syntax highlighting    |
-| **Moment.js**        | Date/time formatting        |
+| Technology | Purpose |
+|:---|:---|
+| **React** | User interface |
+| **Vite** | Development & build tooling |
+| **Tailwind CSS** | Styling |
+| **Axios** | HTTP requests |
+| **React Router DOM** | Client-side routing |
+| **React Hot Toast** | Notifications |
+| **React Markdown** | Markdown rendering |
+| **PrismJS** | Code syntax highlighting |
+| **Moment.js** | Date/time formatting |
 
 ---
 
 ## ⚙️ Backend
 
-| Technology     | Purpose                              |
-| :------------- | :----------------------------------- |
-| **Node.js**    | JavaScript runtime                   |
-| **Express.js** | REST API framework                   |
-| **MongoDB**    | Database                             |
-| **Mongoose**   | MongoDB ODM                          |
-| **JWT**        | Authentication                       |
-| **BcryptJS**   | Password hashing                     |
-| **Axios**      | API communication                    |
-| **Gemini API** | AI text generation                   |
-| **ImageKit**   | AI image generation & image delivery |
-| **Stripe**     | Payment processing                   |
+| Technology | Purpose |
+|:---|:---|
+| **Node.js** | JavaScript runtime |
+| **Express.js** | REST API framework |
+| **MongoDB** | Database |
+| **Mongoose** | MongoDB ODM |
+| **JWT** | Authentication |
+| **BcryptJS** | Password hashing |
+| **Axios** | API communication |
+| **Gemini API** | AI text generation |
+| **ImageKit** | AI image generation & image delivery |
+| **Stripe** | Payment processing |
 
 ---
 
 ## ☁️ Infrastructure & Services
 
-| Service             | Purpose                     |
-| :------------------ | :-------------------------- |
-| **Vercel**          | Frontend deployment         |
-| **Backend Hosting** | Express API deployment      |
-| **MongoDB Atlas**   | Cloud database              |
-| **ImageKit**        | Image generation & CDN      |
-| **Gemini API**      | AI text generation          |
-| **Stripe**          | Payments & credit purchases |
+| Service | Purpose |
+|:---|:---|
+| **Vercel** | Frontend deployment |
+| **Backend Hosting** | Express API deployment |
+| **MongoDB Atlas** | Cloud database |
+| **ImageKit** | Image generation & CDN |
+| **Gemini API** | AI text generation |
+| **Stripe** | Payments & credit purchases |
 
 ---
 
@@ -320,6 +345,10 @@ QuickGPT-main/
 │   ├── package.json
 │   └── server.js
 │
+├── screenshots/
+│   ├── home.png
+│   └── login.png
+│
 └── README.md
 ```
 
@@ -327,7 +356,7 @@ QuickGPT-main/
 
 # 🚀 Getting Started
 
-Follow the steps below to run QuickGPT locally.
+Follow these steps to run QuickGPT locally.
 
 ---
 
@@ -335,12 +364,12 @@ Follow the steps below to run QuickGPT locally.
 
 Before running the project, make sure you have:
 
-* **Node.js 18+**
-* **npm**
-* **MongoDB Atlas account**
-* **Gemini API key**
-* **ImageKit account**
-* **Stripe account**
+- **Node.js 18+**
+- **npm**
+- **MongoDB Atlas account**
+- **Gemini API key**
+- **ImageKit account**
+- **Stripe account**
 
 ---
 
@@ -445,14 +474,14 @@ QuickGPT uses **MongoDB Atlas** for persistent application data.
 
 The database stores information such as:
 
-* User accounts
-* Chat sessions
-* Messages
-* Credit balances
-* Generated content
-* Community data
+- User accounts
+- Chat sessions
+- Messages
+- Credit balances
+- Generated content
+- Community data
 
-Example connection string:
+Example:
 
 ```env
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net
@@ -466,7 +495,7 @@ If the backend already appends `/quickgpt` to the connection string, do not appe
 
 Gemini is used for AI-powered text generation.
 
-Configure your API key in:
+Configure your API key:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
@@ -521,8 +550,8 @@ For production deployments, configure the Stripe webhook to point to the appropr
 
 QuickGPT consists of two applications:
 
-* Frontend
-* Backend
+- 🎨 Frontend
+- ⚙️ Backend
 
 Both need to be running during local development.
 
@@ -581,11 +610,11 @@ Base route:
 /api/user
 ```
 
-| Method | Endpoint             | Description                      |
-| :----: | :------------------- | :------------------------------- |
-| `POST` | `/api/user/register` | Register a new user              |
-| `POST` | `/api/user/login`    | Authenticate user                |
-|  `GET` | `/api/user/data`     | Retrieve authenticated user data |
+| Method | Endpoint | Description |
+|:---:|:---|:---|
+| `POST` | `/api/user/register` | Register a new user |
+| `POST` | `/api/user/login` | Authenticate user |
+| `GET` | `/api/user/data` | Retrieve authenticated user data |
 
 ---
 
@@ -597,10 +626,10 @@ Base route:
 /api/chat
 ```
 
-| Method | Endpoint           | Description         |
-| :----: | :----------------- | :------------------ |
-| `POST` | `/api/chat/create` | Create a new chat   |
-|  `GET` | `/api/chat/get`    | Retrieve user chats |
+| Method | Endpoint | Description |
+|:---:|:---|:---|
+| `POST` | `/api/chat/create` | Create a new chat |
+| `GET` | `/api/chat/get` | Retrieve user chats |
 
 ---
 
@@ -612,9 +641,9 @@ Base route:
 /api/message
 ```
 
-| Method | Endpoint             | Description       |
-| :----: | :------------------- | :---------------- |
-| `POST` | `/api/message/text`  | Generate AI text  |
+| Method | Endpoint | Description |
+|:---:|:---|:---|
+| `POST` | `/api/message/text` | Generate AI text |
 | `POST` | `/api/message/image` | Generate AI image |
 
 ---
@@ -629,10 +658,10 @@ Base route:
 
 The credit system manages:
 
-* Credit balance
-* Credit purchases
-* Payment processing
-* Credit updates
+- Credit balance
+- Credit purchases
+- Payment processing
+- Credit updates
 
 ---
 
@@ -746,13 +775,13 @@ The credit system manages:
 
 QuickGPT follows a simple credit-based usage model.
 
-### Text Generation
+### 💬 Text Generation
 
 ```text
 1 Credit
 ```
 
-### Image Generation
+### 🎨 Image Generation
 
 ```text
 2 Credits
@@ -770,14 +799,14 @@ Security-sensitive configuration is kept on the server.
 
 QuickGPT uses:
 
-* JWT authentication
-* Protected API routes
-* BcryptJS password hashing
-* Environment variables
-* MongoDB Atlas
-* CORS configuration
-* Stripe webhook verification
-* Server-side API credentials
+- JWT authentication
+- Protected API routes
+- BcryptJS password hashing
+- Environment variables
+- MongoDB Atlas
+- CORS configuration
+- Stripe webhook verification
+- Server-side API credentials
 
 ### 🔴 Never expose these values publicly
 
@@ -812,14 +841,14 @@ client/
 
 Recommended Vercel configuration:
 
-| Setting              | Value              |
-| :------------------- | :----------------- |
-| **Project Name**     | `quick-gpt-client` |
-| **Framework Preset** | `Vite`             |
-| **Root Directory**   | `client`           |
-| **Build Command**    | `npm run build`    |
-| **Output Directory** | `dist`             |
-| **Install Command**  | `npm install`      |
+| Setting | Value |
+|:---|:---|
+| **Project Name** | `quick-gpt-client` |
+| **Framework Preset** | `Vite` |
+| **Root Directory** | `client` |
+| **Build Command** | `npm run build` |
+| **Output Directory** | `dist` |
+| **Install Command** | `npm install` |
 
 ### Production Environment Variable
 
@@ -841,12 +870,12 @@ server/
 
 Recommended configuration:
 
-| Setting            | Value              |
-| :----------------- | :----------------- |
-| **Project Name**   | `quick-gpt-server` |
-| **Root Directory** | `server`           |
-| **Framework**      | Other / Node.js    |
-| **Start Command**  | `npm start`        |
+| Setting | Value |
+|:---|:---|
+| **Project Name** | `quick-gpt-server` |
+| **Root Directory** | `server` |
+| **Framework** | Other / Node.js |
+| **Start Command** | `npm start` |
 
 Add all required backend environment variables to your production hosting provider.
 
@@ -859,7 +888,7 @@ Add all required backend environment variables to your production hosting provid
                             │
                             ▼
                  ┌─────────────────────┐
-                 │      Vercel         │
+                 │       Vercel        │
                  │   React Frontend    │
                  └──────────┬──────────┘
                             │
@@ -887,87 +916,49 @@ Add all required backend environment variables to your production hosting provid
 
 ---
 
-# 📸 Screenshots
-
-Add application screenshots to showcase the project.
-
-Recommended structure:
-
-```text
-screenshots/
-├── home.png
-├── chat.png
-├── community.png
-└── credits.png
-```
-
-Then add them to this README:
-
-```markdown
-## 📸 Screenshots
-
-### 🏠 Home
-
-![QuickGPT Home](screenshots/home.png)
-
-### 💬 AI Chat
-
-![QuickGPT Chat](screenshots/chat.png)
-
-### 🌍 Community
-
-![QuickGPT Community](screenshots/community.png)
-
-### 💳 Credits
-
-![QuickGPT Credits](screenshots/credits.png)
-```
-
----
-
 # 🧪 Testing Checklist
 
 Before deploying a new version, verify the following:
 
-### Authentication
+### 🔐 Authentication
 
-* [ ] User registration
-* [ ] User login
-* [ ] JWT authentication
-* [ ] Protected routes
-* [ ] Logout
+- [ ] User registration
+- [ ] User login
+- [ ] JWT authentication
+- [ ] Protected routes
+- [ ] Logout
 
-### Chat
+### 💬 Chat
 
-* [ ] Create chat
-* [ ] Send message
-* [ ] Receive AI response
-* [ ] Chat history
-* [ ] Multiple sessions
+- [ ] Create chat
+- [ ] Send message
+- [ ] Receive AI response
+- [ ] Chat history
+- [ ] Multiple sessions
 
-### Image Generation
+### 🎨 Image Generation
 
-* [ ] Submit image prompt
-* [ ] Generate image
-* [ ] Verify credit deduction
-* [ ] Display generated image
-* [ ] Publish image
+- [ ] Submit image prompt
+- [ ] Generate image
+- [ ] Verify credit deduction
+- [ ] Display generated image
+- [ ] Publish image
 
-### Credits
+### 💳 Credits
 
-* [ ] Display credit balance
-* [ ] Deduct credits correctly
-* [ ] Purchase credits
-* [ ] Verify Stripe payment
-* [ ] Update balance
+- [ ] Display credit balance
+- [ ] Deduct credits correctly
+- [ ] Purchase credits
+- [ ] Verify Stripe payment
+- [ ] Update balance
 
-### UI
+### 🖥️ UI
 
-* [ ] Responsive design
-* [ ] Dark mode
-* [ ] Loading states
-* [ ] Toast notifications
-* [ ] Mobile layout
+- [ ] Responsive design
+- [ ] Dark mode
+- [ ] Loading states
+- [ ] Toast notifications
+- [ ] Mobile layout
 
 ---
 
@@ -981,14 +972,14 @@ If you encounter:
 querySrv ECONNREFUSED
 ```
 
-check the following:
+check:
 
-* MongoDB connection string
-* MongoDB Atlas Network Access
-* Database username
-* Database password
-* Cluster configuration
-* DNS/network connectivity
+- MongoDB connection string
+- MongoDB Atlas Network Access
+- Database username
+- Database password
+- Cluster configuration
+- DNS/network connectivity
 
 ---
 
@@ -1027,11 +1018,11 @@ VITE_SERVER_URL=https://your-server-url.vercel.app
 
 Make sure:
 
-* The backend is deployed.
-* The backend URL is correct.
-* CORS allows the frontend origin.
-* The environment variable is configured in the frontend deployment.
-* The frontend has been redeployed after changing environment variables.
+- The backend is deployed.
+- The backend URL is correct.
+- CORS allows the frontend origin.
+- The environment variable is configured in the frontend deployment.
+- The frontend has been redeployed after changing environment variables.
 
 For local development:
 
@@ -1064,12 +1055,18 @@ QuickGPT-main/
 │   ├── models/
 │   └── routes/
 │
+├── screenshots/
+│   ├── home.png
+│   └── login.png
+│
 └── README.md
 ```
 
-### Recommended `.gitignore`
+---
 
-Make sure secrets are ignored:
+# 🛡️ Recommended `.gitignore`
+
+Make sure sensitive files are ignored:
 
 ```gitignore
 node_modules/
@@ -1102,13 +1099,13 @@ git checkout -b feature/new-feature
 git add .
 ```
 
-### 5. Commit
+### 5. Commit your changes
 
 ```bash
 git commit -m "Add new feature"
 ```
 
-### 6. Push the branch
+### 6. Push your branch
 
 ```bash
 git push origin feature/new-feature
@@ -1130,11 +1127,11 @@ This project is licensed under the **ISC License**.
 
 ## Shubham Shrivastav
 
-Full-Stack Developer & Creator of QuickGPT
+**Full-Stack Developer & Creator of QuickGPT**
 
 <br />
 
-[![GitHub](https://img.shields.io/badge/GitHub-Shubham%20Shrivastav-181717?style=for-the-badge\&logo=github)](https://github.com/shubhamshrivastav1)
+[![GitHub](https://img.shields.io/badge/GitHub-Shubham%20Shrivastav-181717?style=for-the-badge&logo=github)](https://github.com/shubhamshrivastav1)
 
 [![QuickGPT](https://img.shields.io/badge/🚀%20QuickGPT-Live%20Demo-success?style=for-the-badge)](https://quick-gpt-client-black.vercel.app/)
 
@@ -1146,15 +1143,15 @@ Full-Stack Developer & Creator of QuickGPT
 
 ### 🚀 Live Application
 
-**https://quick-gpt-client-black.vercel.app/**
+**[https://quick-gpt-client-black.vercel.app/](https://quick-gpt-client-black.vercel.app/)**
 
 ### 📦 GitHub Repository
 
-**https://github.com/shubhamshrivastav1/QuickGPT-main**
+**[https://github.com/shubhamshrivastav1/QuickGPT-main](https://github.com/shubhamshrivastav1/QuickGPT-main)**
 
 ### 👨‍💻 Developer
 
-**https://github.com/shubhamshrivastav1**
+**[https://github.com/shubhamshrivastav1](https://github.com/shubhamshrivastav1)**
 
 ---
 
@@ -1162,11 +1159,11 @@ Full-Stack Developer & Creator of QuickGPT
 
 If you found **QuickGPT** useful or interesting:
 
-* ⭐ Star the repository
-* 🍴 Fork the project
-* 🐛 Report issues
-* 💡 Suggest improvements
-* 🤝 Contribute to the project
+- ⭐ Star the repository
+- 🍴 Fork the project
+- 🐛 Report issues
+- 💡 Suggest improvements
+- 🤝 Contribute to the project
 
 Your support helps improve and grow the project.
 
@@ -1174,7 +1171,7 @@ Your support helps improve and grow the project.
 
 <div align="center">
 
-## 🤖 QUICKGPT
+# 🤖 QUICKGPT
 
 ### Build. Create. Generate. Share.
 
